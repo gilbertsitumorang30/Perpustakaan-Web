@@ -1,0 +1,42 @@
+.permintaan {
+  padding: 24px;
+
+  .header-permintaan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .title-permintaan {
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .cell-aksi {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .tombol-terima,
+    .tombol-hapus {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .tombol-terima {
+      border: 1px solid #077c48;
+      color: #077c48;
+    }
+
+    .tombol-hapus {
+      color: #dc3545;
+
+      border: 1px solid #dc3545;
+    }
+  }
+}

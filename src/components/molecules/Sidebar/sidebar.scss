@@ -1,0 +1,47 @@
+.sidebar {
+  position: fixed;
+  padding-top: 36px;
+  height: 100%;
+  width: 160px;
+  background-color: white;
+
+  ul {
+    padding-left: 8px;
+    p {
+      font-size: 10px;
+      color: #9f9f9f;
+      margin-bottom: 4px;
+      padding-left: 8px;
+    }
+    li {
+      list-style: none;
+      font-size: 12px;
+      color: #4f4f4f;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      height: 28px;
+
+      .icon {
+        font-size: 18px;
+        padding-right: 8px;
+      }
+    }
+    li:hover {
+      border-left: 2px solid #077c48;
+      background-color: #ececec;
+      cursor: pointer;
+    }
+
+    .klik,
+    .active-navigation {
+      border-left: 2px solid #077c48;
+      background-color: #ececec;
+    }
+
+    .navigasi {
+      text-decoration: none;
+    }
+  }
+}

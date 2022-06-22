@@ -1,0 +1,22 @@
+.text-input {
+  display: flex;
+  height: 28px;
+  width: 100%;
+  border: 1px solid #808080;
+
+  .icon {
+    background-color: #077c48;
+    width: 32px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .label-input {
+    flex: 1;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    padding: 0 8px;
+  }
+}

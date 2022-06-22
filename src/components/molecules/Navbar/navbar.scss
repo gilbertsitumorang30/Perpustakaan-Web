@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  height: 36px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  z-index: 9;
+  .title-navbar {
+    font-family: "Sofia", cursive;
+    color: #077c48;
+    width: 158px;
+    border-right: 2px solid #ececec;
+    text-align: center;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 12px;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+}

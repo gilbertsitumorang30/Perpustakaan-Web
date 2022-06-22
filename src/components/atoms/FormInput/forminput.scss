@@ -1,0 +1,38 @@
+.form-input {
+  width: 100%;
+
+  .bintang {
+    color: red;
+  }
+
+  .label-input {
+    color: #9f9f9f;
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 4px;
+  }
+
+  .text-input,
+  textarea {
+    border: none;
+    background-color: #ececec;
+    border-radius: 2px;
+    width: calc(100% - 18px);
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+
+  .text-input {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+  }
+
+  textarea {
+    height: 120px;
+    padding: 8px 8px;
+  }
+}

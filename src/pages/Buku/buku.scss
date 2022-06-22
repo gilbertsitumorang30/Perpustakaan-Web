@@ -1,0 +1,49 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.buku {
+  padding: 24px;
+
+  .kosong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+
+    .icon {
+      height: 150px;
+      width: 150px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .header-buku {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+
+    .title-buku {
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+  }
+
+  .content-buku {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+}

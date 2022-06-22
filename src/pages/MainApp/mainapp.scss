@@ -1,0 +1,9 @@
+.main-app {
+  height: 100vh;
+  .main-app-content {
+    padding-top: 36px;
+    padding-left: 160px;
+    width: calc(1366px - 160px);
+    margin: 0 auto;
+  }
+}

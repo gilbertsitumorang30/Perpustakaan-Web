@@ -1,0 +1,28 @@
+.log-pengembalian {
+  padding: 24px;
+  .header-log-pengembalian {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .title-log-pengembalian {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .cell-aksi {
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #077c48;
+
+    .tombol-detail {
+      padding: 2px 12px;
+      color: #077c48;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}
