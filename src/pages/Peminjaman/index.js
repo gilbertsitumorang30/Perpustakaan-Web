@@ -129,11 +129,13 @@ const Peminjaman = () => {
   ];
 
   const rows = daftarPeminjaman.map((currentValue, index) => {
-    let dateNow = JSON.parse(JSON.stringify(new Date()));
+    let d = new Date();
+    d.setHours(23, 59, 59, 999);
+    let dateNow = JSON.parse(JSON.stringify(d));
     let status;
     let keterangan;
 
-    if (dateNow < currentValue.tanggal_harus_kembali) {
+    if (dateNow <= currentValue.tanggal_harus_kembali) {
       status = "masa peminjaman";
       keterangan = "";
     } else {
@@ -153,9 +155,7 @@ const Peminjaman = () => {
       id: currentValue.id,
       peminjam: currentValue.nama_anggota,
       buku: currentValue.judul_buku,
-      tanggalPinjam: moment(currentValue.tanggal_pinjam).format(
-        "dddd, DD MMMM YYYY"
-      ),
+      tanggalPinjam: moment(dateNow).format("dddd, DD MMMM YYYY"),
       tanggalKembali: moment(currentValue.tanggal_harus_kembali).format(
         "dddd, DD MMMM YYYY"
       ),

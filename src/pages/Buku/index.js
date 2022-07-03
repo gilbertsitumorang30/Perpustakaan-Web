@@ -46,7 +46,6 @@ const Buku = () => {
       setInfo(true);
     }
   };
-  console.log("inlah:", keyword);
 
   const getDetailBuku = async (id) => {
     try {

@@ -1,6 +1,7 @@
 import React from "react";
 import { TextView } from "../../atoms";
 const DetailPengembalian = ({ detailPengembalian }) => {
+  console.log("Detail Pengembalian:", detailPengembalian);
   return (
     <div className="detail-peminjaman">
       <TextView title="Peminjam" value={detailPengembalian.nama_anggota} />

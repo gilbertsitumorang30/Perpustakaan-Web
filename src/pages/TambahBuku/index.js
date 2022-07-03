@@ -131,6 +131,7 @@ const TambahBuku = () => {
     let uploaded = e.target.files[0];
     setImage(URL.createObjectURL(uploaded));
     setFoto(uploaded);
+    console.log("hasil:", uploaded);
   };
 
   return (
