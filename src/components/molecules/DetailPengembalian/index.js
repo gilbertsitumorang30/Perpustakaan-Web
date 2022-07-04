@@ -1,7 +1,10 @@
 import React from "react";
 import { TextView } from "../../atoms";
+
+import moment from "moment";
+import "moment/locale/id"; // without this line it didn't work
+moment.locale("id");
 const DetailPengembalian = ({ detailPengembalian }) => {
-  console.log("Detail Pengembalian:", detailPengembalian);
   return (
     <div className="detail-peminjaman">
       <TextView title="Peminjam" value={detailPengembalian.nama_anggota} />
@@ -9,7 +12,9 @@ const DetailPengembalian = ({ detailPengembalian }) => {
       <TextView title="Menyetujui" value={detailPengembalian.nama_petugas} />
       <TextView
         title="Tanggal Kembali"
-        value={detailPengembalian.tanggal_kembali}
+        value={moment(detailPengembalian.tanggal_kembali).format(
+          "dddd, DD MMMM YYYY"
+        )}
       />
       <TextView
         title="Terlambat"

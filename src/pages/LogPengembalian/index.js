@@ -74,7 +74,9 @@ const LogPengembalian = () => {
       const res = await axios.get(
         `${process.env.REACT_APP_BASE_URL}/api/v1/pengembalian/${id}`
       );
+      console.log("id", id);
       setDetailPengembalian(res.data.data);
+      console.log("data:", res.data.data);
     } catch (error) {
       console.log(error.response);
     }

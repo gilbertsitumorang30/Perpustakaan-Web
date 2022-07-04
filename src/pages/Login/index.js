@@ -59,11 +59,18 @@ const Login = () => {
             icon={<LockIcon />}
             type="password"
             setValue={setPassword}
+            password={true}
           />
           <Gap height={32} />
           <div
             onClick={() => {
-              loginHandle();
+              if (nip.length <= 0) {
+                setErrorMsg("Harap mengisi nomor induk pegawai");
+              } else if (password.length <= 0) {
+                setErrorMsg("Harap mengisi password");
+              } else {
+                loginHandle();
+              }
             }}
             className="tombol-masuk"
           >

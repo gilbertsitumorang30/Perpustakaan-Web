@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
 
-    background-color: #077c48;
     .info-icon {
       color: white;
       height: 100px;
@@ -25,10 +24,18 @@
       color: #077c48;
     }
 
+    .gagal {
+      font-size: 24px;
+      font-weight: bold;
+      color: #dc3545;
+    }
+
     .sukses-detail {
-      font-size: 18px;
+      font-size: 16px;
       color: #4f4f4f;
       text-align: center;
+      margin-top: 12px;
+      margin: 0 8px;
     }
   }
 }

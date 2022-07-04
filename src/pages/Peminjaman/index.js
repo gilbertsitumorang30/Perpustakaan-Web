@@ -135,7 +135,7 @@ const Peminjaman = () => {
     let status;
     let keterangan;
 
-    if (dateNow <= currentValue.tanggal_harus_kembali) {
+    if (dateNow < currentValue.tanggal_harus_kembali) {
       status = "masa peminjaman";
       keterangan = "";
     } else {
@@ -146,8 +146,12 @@ const Peminjaman = () => {
           )
           .asDays()
       );
-      status = 1000 * hari;
-      keterangan = hari;
+      if (hari <= 0) {
+        status = "masa peminjaman";
+      } else {
+        status = 1000 * hari;
+        keterangan = hari;
+      }
     }
 
     return {

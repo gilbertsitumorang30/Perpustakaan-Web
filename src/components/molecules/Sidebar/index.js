@@ -6,25 +6,62 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import UpdateIcon from "@mui/icons-material/Update";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Gap } from "../../atoms";
 import "./sidebar.scss";
 
 const Sidebar = ({ setOpenModal }) => {
-  console.log(window.location);
+  useEffect(() => {
+    clear();
+    switch (window.location.pathname) {
+      case "/buku":
+        document.querySelectorAll(".sidebar ul li")[1].classList.add("klik");
+        break;
+      case "/buku/tambah":
+        document.querySelectorAll(".sidebar ul li")[1].classList.add("klik");
+        break;
+      case "/anggota":
+        document.querySelectorAll(".sidebar ul li")[2].classList.add("klik");
+        break;
+      case "/anggota/tambah":
+        document.querySelectorAll(".sidebar ul li")[2].classList.add("klik");
+        break;
+      case "/peminjaman":
+        document.querySelectorAll(".sidebar ul li")[3].classList.add("klik");
+        break;
+      case "/peminjaman/tambah":
+        document.querySelectorAll(".sidebar ul li")[3].classList.add("klik");
+        break;
+      case "/permintaan":
+        document.querySelectorAll(".sidebar ul li")[4].classList.add("klik");
+        break;
+      case "/log-peminjaman":
+        document.querySelectorAll(".sidebar ul li")[5].classList.add("klik");
+        break;
+      case "/log-pengembalian":
+        document.querySelectorAll(".sidebar ul li")[6].classList.add("klik");
+        break;
+      default:
+        document.querySelectorAll(".sidebar ul li")[0].classList.add("klik");
+        break;
+    }
+  }, []);
 
   const handleMouseEnter = (e) => {
     if (e.target.tagName === "LI") {
       e.target.classList.add("active-navigation");
     }
   };
-
-  const handleClick = (e) => {
+  const clear = () => {
     let navigasi = document.querySelectorAll(".sidebar ul li");
     navigasi.forEach(function (element) {
       element.classList.remove("klik");
     });
+  };
+
+  const handleClick = (e) => {
+    clear();
     if (e.target.tagName === "LI") {
       e.target.classList.add("klik");
     }

@@ -31,8 +31,8 @@ const Permintaan = () => {
         }
       );
       setDaftarPermintaan(
-        daftarPermintaan.map((currentValue) => {
-          return currentValue !== id;
+        daftarPermintaan.filter((currentValue) => {
+          return currentValue.id !== id;
         })
       );
     } catch (error) {
@@ -160,7 +160,6 @@ const Permintaan = () => {
           type="info"
           detailInfo={konfrimasi}
           displayFooter="none"
-          title="Konfrimasi Peminjaman"
           width={320}
           closeModal={() => {
             setInfo(false);

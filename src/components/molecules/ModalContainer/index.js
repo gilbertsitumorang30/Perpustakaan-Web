@@ -9,6 +9,7 @@ import Info from "../Info";
 import "./modalcontainer.scss";
 
 const ModalContainer = ({
+  sukses = true,
   type,
   detailAnggota,
   detailPeminjaman,
@@ -36,7 +37,7 @@ const ModalContainer = ({
       content = <DetailAnggota detailAnggota={detailAnggota} />;
       break;
     case "info":
-      content = <Info pesan={detailInfo} />;
+      content = <Info pesan={detailInfo} sukses={sukses} />;
       break;
     case "peminjaman":
       content = <DetailPeminjaman detailPeminjaman={detailPeminjaman} />;
@@ -55,7 +56,10 @@ const ModalContainer = ({
       <div className="modal-content" style={{ width: width }}>
         <div
           className="modal-header"
-          style={{ backgroundColor: backGroundHeader }}
+          style={{
+            backgroundColor:
+              type === "info" && !sukses ? "#dc3545" : backGroundHeader,
+          }}
         >
           <p>{title}</p>
           <div onClick={() => closeModal()}>

@@ -27,6 +27,7 @@ const Buku = () => {
   const [info, setInfo] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [detailBuku, setDetailBuku] = useState([]);
+  const [sukses, setSukses] = useState(true);
 
   //state scroll
   const [items, setItems] = useState([]);
@@ -39,8 +40,10 @@ const Buku = () => {
       setIsLoading(true);
       await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/v1/buku/${id}`);
       setItems(items.filter((item) => item.id !== id));
+      setSukses(true);
     } catch (error) {
       console.log(error.response);
+      setSukses(false);
     } finally {
       setIsLoading(false);
       setInfo(true);
@@ -84,6 +87,7 @@ const Buku = () => {
     setCari.current = getBuku;
     setBukuKeyword.current = setKeyword;
     getBuku();
+    console.log("useffe");
   }, []);
 
   const fetchBuku = async () => {
@@ -202,7 +206,12 @@ const Buku = () => {
       {info && (
         <ModalContainer
           type="info"
-          detailInfo="Menghapus buku"
+          detailInfo={
+            sukses
+              ? "Berhasil Menghapus buku"
+              : "Buku sedang dipinjam atau sudah pernah di pinjam, set stok ke 0 untuk menghapus buku"
+          }
+          sukses={sukses}
           displayFooter="none"
           title=" "
           width={320}

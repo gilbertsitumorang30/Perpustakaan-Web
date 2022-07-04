@@ -51,14 +51,12 @@ const TambahAnggota = () => {
       return "harap mengisi nomor induk anggota!";
     } else if (nama.length <= 0) {
       return "harap mengisi nama anggota!";
-    } else if (id_kelas.length <= 0) {
+    } else if (!id_kelas.length) {
       return "harap memilih kelas anggota";
     } else if (password.length <= 0) {
       return "harap mengisi password anggota";
     } else if (jenis_kelamin.length <= 0) {
       return "harap memilih jenis kelamin siswa";
-    } else {
-      return null;
     }
   };
 

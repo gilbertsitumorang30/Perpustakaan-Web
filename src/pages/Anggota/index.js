@@ -14,12 +14,13 @@ const Anggota = () => {
   const [openModal, setOpenModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [sukses, setSukses] = useState(true);
 
   const getDaftarAnggota = useCallback(async () => {
     try {
       // setIsLoading(true);
       const res = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/api/v1/anggota`
+        `${process.env.REACT_APP_BASE_URL}/api/v1/anggota/total`
       );
       setDaftarAnggota(res.data.data);
     } catch (error) {
@@ -35,9 +36,11 @@ const Anggota = () => {
       await axios.delete(
         `${process.env.REACT_APP_BASE_URL}/api/v1/anggota/${id}`
       );
+      setSukses(true);
       setDaftarAnggota(daftarAnggota.filter((item) => item.id !== id));
     } catch (error) {
       console.log(error.response);
+      setSukses(false);
     } finally {
       setIsLoading(false);
       setInfo(true);
@@ -76,7 +79,11 @@ const Anggota = () => {
       headerAlign: "center",
       align: "center",
     },
-    { field: "nama", headerName: "Nama", width: 320 },
+    {
+      field: "nama",
+      headerName: "Nama",
+      width: 320,
+    },
     { field: "alamat", headerName: "Alamat", width: 320 },
     {
       field: "kelas",
@@ -98,6 +105,7 @@ const Anggota = () => {
     return {
       nomor: index + 1,
       id: currentValue.id,
+      nis: currentValue.nomor_induk_siswa,
       nama: currentValue.nama,
       alamat: currentValue.alamat,
       kelas: currentValue.kelas,
@@ -204,7 +212,12 @@ const Anggota = () => {
       {info && (
         <ModalContainer
           type="info"
-          detailInfo="Menghapus Anggota"
+          detailInfo={
+            sukses
+              ? "Berhasil Menghapus Anggota"
+              : "Tidak dapat menghapus anggota yang sedang meminjam buku"
+          }
+          sukses={sukses}
           displayFooter="none"
           title=" "
           width={320}
