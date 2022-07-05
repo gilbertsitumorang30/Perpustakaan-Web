@@ -46,7 +46,7 @@ const Sidebar = ({ setOpenModal }) => {
         document.querySelectorAll(".sidebar ul li")[0].classList.add("klik");
         break;
     }
-  }, []);
+  }, [window.location.pathname]);
 
   const handleMouseEnter = (e) => {
     if (e.target.tagName === "LI") {
