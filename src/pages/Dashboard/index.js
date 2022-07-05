@@ -110,21 +110,25 @@ const Dashboard = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {terakhirMasuk.map((row) => (
-              <TableRow
-                key={row.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.nama}
-                </TableCell>
-                <TableCell align="right">{row.nomor_induk_siswa}</TableCell>
-                <TableCell align="right">{row.kelas}</TableCell>
-                <TableCell align="right">
-                  {moment(row.terakhir_masuk).format("dddd, DD MMMM YYYY")}
-                </TableCell>
-              </TableRow>
-            ))}
+            {terakhirMasuk.map((row) => {
+              if (row.terakhir_masuk) {
+                return (
+                  <TableRow
+                    key={row.id}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.nama}
+                    </TableCell>
+                    <TableCell align="right">{row.nomor_induk_siswa}</TableCell>
+                    <TableCell align="right">{row.kelas}</TableCell>
+                    <TableCell align="right">
+                      {moment(row.terakhir_masuk).format("dddd, DD MMMM YYYY")}
+                    </TableCell>
+                  </TableRow>
+                );
+              }
+            })}
           </TableBody>
         </Table>
       </TableContainer>
