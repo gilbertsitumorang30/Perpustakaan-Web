@@ -253,7 +253,7 @@ const EditAnggota = () => {
           width={320}
           closeModal={() => {
             setInfo(false);
-            navigate("/buku");
+            navigate("/anggota");
           }}
         />
       )}
