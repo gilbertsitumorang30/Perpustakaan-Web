@@ -21,7 +21,7 @@ const Sidebar = ({ setOpenModal }) => {
       case "/buku/tambah":
         document.querySelectorAll(".sidebar ul li")[1].classList.add("klik");
         break;
-      case "/buku/tambah/edit":
+      case "/buku/edit":
         document.querySelectorAll(".sidebar ul li")[1].classList.add("klik");
         break;
       case "/anggota":
