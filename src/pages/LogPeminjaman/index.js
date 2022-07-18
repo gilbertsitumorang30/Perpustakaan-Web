@@ -24,12 +24,27 @@ const LogPeminjaman = () => {
       headerAlign: "center",
       align: "center",
     },
-    { field: "peminjam", headerName: "Peminjam", width: 280 },
-    { field: "buku", headerName: "Buku", width: 280 },
+    { field: "peminjam", headerName: "Peminjam", width: 260 },
+    { field: "buku", headerName: "Buku", width: 260 },
     {
       field: "tanggalPinjam",
       headerName: "Tanggal Pinjam",
-      width: 280,
+      width: 200,
+    },
+    {
+      field: "status",
+      headerName: "Status",
+      width: 160,
+      renderCell: (params) => {
+        switch (params.row.status) {
+          case "kembali":
+            return <div className="cell-status">{params.row.status}</div>;
+          case "ditolak":
+            return <div className="cell-status">{params.row.status}</div>;
+          default:
+            return <div className="cell-status">{params.row.status}</div>;
+        }
+      },
     },
   ];
 
@@ -37,7 +52,7 @@ const LogPeminjaman = () => {
     {
       field: "aksi",
       headerName: "Aksi",
-      width: 200,
+      width: 160,
       renderCell: () => {
         return (
           <div className="cell-aksi">
@@ -57,6 +72,7 @@ const LogPeminjaman = () => {
       tanggalPinjam: moment(currentValue.tanggal_pinjam).format(
         "dddd, DD MMMM YYYY"
       ),
+      status: currentValue.status,
     };
   });
 

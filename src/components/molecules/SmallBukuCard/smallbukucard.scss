@@ -35,6 +35,10 @@
       font-weight: 700;
       color: #4f4f4f;
       margin-left: 12px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
     }
 
     .kategori-buku {

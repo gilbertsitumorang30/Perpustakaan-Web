@@ -87,7 +87,6 @@ const Buku = () => {
     setCari.current = getBuku;
     setBukuKeyword.current = setKeyword;
     getBuku();
-    console.log("useffe");
   }, []);
 
   const fetchBuku = async () => {

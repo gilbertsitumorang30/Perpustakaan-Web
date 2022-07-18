@@ -14,7 +14,17 @@
     font-weight: bold;
   }
 
+  .cell-status {
+    padding: 4px 0;
+    text-align: center;
+    border-radius: 4px;
+    width: 100px;
+    color: white;
+    font-size: 12px;
+  }
+
   .cell-aksi {
+    padding: 2px 0;
     border-radius: 4px;
     background-color: #fff;
     border: 1px solid #077c48;
