@@ -24,27 +24,12 @@ const LogPeminjaman = () => {
       headerAlign: "center",
       align: "center",
     },
-    { field: "peminjam", headerName: "Peminjam", width: 260 },
-    { field: "buku", headerName: "Buku", width: 260 },
+    { field: "peminjam", headerName: "Peminjam", width: 280 },
+    { field: "buku", headerName: "Buku", width: 280 },
     {
       field: "tanggalPinjam",
       headerName: "Tanggal Pinjam",
-      width: 200,
-    },
-    {
-      field: "status",
-      headerName: "Status",
-      width: 160,
-      renderCell: (params) => {
-        switch (params.row.status) {
-          case "kembali":
-            return <div className="cell-status">{params.row.status}</div>;
-          case "ditolak":
-            return <div className="cell-status">{params.row.status}</div>;
-          default:
-            return <div className="cell-status">{params.row.status}</div>;
-        }
-      },
+      width: 280,
     },
   ];
 
@@ -52,7 +37,7 @@ const LogPeminjaman = () => {
     {
       field: "aksi",
       headerName: "Aksi",
-      width: 160,
+      width: 200,
       renderCell: () => {
         return (
           <div className="cell-aksi">
