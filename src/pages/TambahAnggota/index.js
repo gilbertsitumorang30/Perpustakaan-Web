@@ -84,11 +84,13 @@ const TambahAnggota = () => {
         data: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
+      setInfo(true);
     } catch (error) {
-      console.log("error:", error.response);
+      console.log("error:", error.response.data.msg);
+      setPeringatan(error.response.data.msg);
+      setOpenModal(true);
     } finally {
       setIsloading(false);
-      setInfo(true);
     }
   };
 
