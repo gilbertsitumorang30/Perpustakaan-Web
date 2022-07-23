@@ -47,7 +47,15 @@ const Dashboard = () => {
     setTerakhirMasuk(res.data.data);
   }, []);
 
+  const pembatalanOtomatis = async () => {
+    const res = await axios.put(
+      `${process.env.REACT_APP_BASE_URL}/api/v1/peminjaman/batal`
+    );
+    setTerakhirMasuk(res.data.data);
+  };
+
   useEffect(() => {
+    pembatalanOtomatis();
     setSearchDisplay("none");
     getTotalDashboard();
     getAnggotaTerakhirLogin();
