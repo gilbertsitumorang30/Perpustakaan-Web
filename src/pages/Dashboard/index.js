@@ -48,10 +48,11 @@ const Dashboard = () => {
   }, []);
 
   const pembatalanOtomatis = async () => {
-    const res = await axios.put(
-      `${process.env.REACT_APP_BASE_URL}/api/v1/peminjaman/batal`
-    );
-    setTerakhirMasuk(res.data.data);
+    try {
+      axios.put(`${process.env.REACT_APP_BASE_URL}/api/v1/peminjaman/batal`);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   useEffect(() => {
