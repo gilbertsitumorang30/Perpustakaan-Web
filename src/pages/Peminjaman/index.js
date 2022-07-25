@@ -159,7 +159,9 @@ const Peminjaman = () => {
       id: currentValue.id,
       peminjam: currentValue.nama_anggota,
       buku: currentValue.judul_buku,
-      tanggalPinjam: moment(dateNow).format("dddd, DD MMMM YYYY"),
+      tanggalPinjam: moment(currentValue.tanggal_pinjam).format(
+        "dddd, DD MMMM YYYY"
+      ),
       tanggalKembali: moment(currentValue.tanggal_harus_kembali).format(
         "dddd, DD MMMM YYYY"
       ),
